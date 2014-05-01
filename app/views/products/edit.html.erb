@@ -1,0 +1,40 @@
+<% if current_user && current_user.admin == true %>
+
+	<h2>Edit <%= @product.name %></h2>
+
+		<div class="formdiv">
+			<%= form_for [@category, @product], category_products_path, :html => { :multipart => true } do |f| %>
+				<%= f.label :name, "Name" %>
+				<br>
+				<%= f.text_field :name %>
+				<br>
+				<%= f.label :color, "Color" %>
+				<br>
+				<%= f.text_field :color %>
+				<br>
+				<%= f.label :measurements, "Measurements" %>
+				<br>
+				<%= f.text_area :measurements%>
+				<br>
+				<%= f.label :price, "Price" %>
+				<br>
+				<%= f.text_field :price %>
+				<br>
+				<%= f.label :inventory, "Amount in Stock" %>
+				<br>
+				<%= f.text_field :inventory %>
+				<br>
+				<%= f.label :soldout, "Sold Out" %>
+				<br>
+				<%= f.text_field :soldout %>
+				<br>
+				<%= f.label :image, "Upload Image" %>
+				<br>
+				<%= f.file_field :image %>
+				<br>
+				<%= f.submit "Submit", :class => "submit" %>
+			<% end %>
+		</div>
+
+<% end %>
+

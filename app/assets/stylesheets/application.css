@@ -1,0 +1,243 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body{
+	font-family: "Sackers Gothic Std" "Helvetica", "Arial", sans-serif;
+	text-transform: lowercase;
+	color: #000;
+	font-size: 14px;
+}
+
+.numbers{
+	font-size: .9em;
+}
+
+.color{
+	color: #a9c9b7;
+}
+
+.linkpadding{
+	padding: 10px;
+}
+
+.paddingspan{
+	padding: 20px;
+}
+
+#container{
+	width: 900px;
+ 	margin: 0 auto;
+ 	padding: 0;
+ 	background-color: #fff;
+}
+
+#header{
+	width: 900px;
+	padding: 0;
+	margin: 40px 0;
+	text-align: center;
+}
+
+/* --links-- */
+
+a:link{
+	text-decoration: none;
+	color: #000;
+}
+
+a:visited{
+	color: #000;
+}
+
+a:hover{
+	color: #ccc;
+}
+
+a.colorlink:link{
+	text-decoration: none;
+	color: #a9c9b7;
+}
+
+a.colorlink:visited{
+	color: #a9c9b7;
+}
+
+a.colorlink:hover{
+	color: #ccc;
+}
+
+/* --head-- */
+
+h1{
+	height: 30px;
+	padding: 0;
+	margin: 0 auto 30px;
+	letter-spacing: .1em;
+	font-size: 2.1em;
+}
+
+h1 a:link{
+ 	text-decoration: none;
+ 	color: #a9c9b7;
+}
+
+h1 a:visited{
+ 	color: #a9c9b7;
+}
+
+h1 a:hover{
+ 	color: #a9c9b7;
+ 	cursor: pointer;
+}
+
+/* --headers-- */
+
+h2{
+	font-size: 1.5em;
+}
+
+h3{
+	font-size: 1.3em;
+}
+
+h4{
+	font-size: 1.1em;
+}
+
+ /* --navigation menu-- */
+
+#nav{
+	width: 900px;
+ 	height: 30px;
+	margin: 0 auto;
+	padding: 0;
+	line-height: 24px;
+}
+
+ul#menu{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul#menu li.menu_item{
+ 	display: inline;
+ 	padding: 16px;
+}
+
+a:link{
+ 	text-decoration: none;
+ 	color: #000;
+}
+
+a:visited{
+ 	color: #000;
+}
+
+a:hover{
+ 	color: #ccc;
+ 	cursor: pointer;
+}
+
+ /* --content-- */
+
+#content{
+	width: 900px;
+	margin: 40px 0;
+	padding: 0;
+}
+
+.flash{
+	color: #ccc;
+	padding: 0 0 10px 0;
+	letter-spacing: .1em;
+	font-size: 1.1em;
+}
+
+/* --footer-- */
+
+#footer{
+	height: 30px;
+	margin: 40px 0;
+	padding: 0;
+	width: 900px;
+}
+
+#left{
+	margin-left: 50px;
+	float: left;
+	width: 400px;
+}
+
+#right{
+	margin-right: 50px;
+	float: right;
+	width: 400px;
+	text-align: right;
+}
+
+/* --forms--- */
+
+ div#formdiv{
+	line-height: 160%;
+}
+
+input[type="text"]{
+   font-family: inherit;
+   font-size: inherit;
+   color: #ccc;
+   width: 250px;
+}
+
+input[type="password"]{
+   font-family: inherit;
+   font-size: inherit;
+   color: #ccc;
+   width: 250px;
+}
+
+textarea{
+   font-family: inherit;
+   font-size: inherit;
+   color: #ccc;
+   width: 250px;
+   height: 150px;
+}
+
+.submit{
+	font-size: .9em;
+	font-family: inherit;
+	text-transform: lowercase;
+	background-color: #ffffff;
+	border: 1px solid #ccc;
+	letter-spacing: .2em;
+	margin: 10px 0;
+}
+
+input.submit:hover{
+	cursor: pointer;
+	color: #ccc;
+	background-color: #f9f4f4;
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Aleksandra Kolanko Inventory</title>
+	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<h1><%= link_to "Aleksandra Kolanko Inventory", root_path %></h1>
+				<% if current_user && current_user.admin == true %>
+					<div id="nav">
+						<ul id="menu">
+								<li class="menu_item">
+									<%= link_to "Categories", categories_path %>
+								</li>
+								<li class="menu_item">
+									In Stock
+								</li>
+								<li class="menu_item">
+									Sold Products
+								</li>
+								<li class="menu_item">
+									<%= link_to "New User", new_user_path %>
+								</li>
+								<li class="menu_item">
+									<%= link_to "My Account", user_path(current_user.id) %>
+								</li>
+								<li class="menu_item">
+									<%= link_to "Sign Out", signout_path, method: :delete %>
+								</li>
+						</ul>
+					</div>
+				<% end %>
+			</div>
+			<div id ="content">
+				<% if flash[:notice] %>
+					<div class="flash">
+						<%= flash[:notice] %>
+					</div>
+				<% end %>
+				<% if flash[:alert] %>
+					<div class="flash">
+						<%= flash[:alert] %>
+					</div>
+				<% end %>
+				<%= yield %>
+			</div>
+			<div id="footer">
+				<div id="left">
+					<span class="numbers">&copy 2014</span> Aleksandra Kolanko
+				</div>
+				<div id="right">
+					<%= link_to "aleksandrakolanko.com", "http://www.aleksandrakolanko.com" %>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

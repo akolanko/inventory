@@ -1,0 +1,21 @@
+<% if current_user && current_user.admin == true %>
+	<h2>Categories</h2>
+	<br><br>
+	<% @categories.each do |category| %>
+		<%= link_to category.name, category_path(category.id) %>
+		<span class="paddingspan"><%=link_to "[Add Product]", new_category_product_path(category.id), class: "colorlink" %></span>
+		<span class= "paddingspan"><%= link_to "[Delete]", category_path(category.id), method: :delete, confirm: "Are you sure you want to delete #{category.name}?", class: "colorlink" %></span>
+		<br><br>
+	<% end %>
+	<br>
+	<span class="color"><h3> Add a Category </h3></span>
+	<div class="formdiv">
+		<%= form_for @category do |f| %>
+			<%=f.label :name, "Name" %>
+			<br>
+			<%=f.text_field :name %>
+			<br>
+			<%=f.submit "Submit", :class => "submit" %>
+		<% end %>
+	</div>
+<% end %>

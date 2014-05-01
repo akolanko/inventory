@@ -1,0 +1,12 @@
+<% if current_user && current_user.admin == true %>
+	<h4> Add a Category </h4>
+	<div class="formdiv">
+		<%= form_for @category do |f| %>
+			<%=f.label :name, "Name" %>
+			<br>
+			<%=f.text_field :name %>
+			<br>
+			<%=f.submit "Submit", :class => "submit" %>
+		<% end %>
+	</div>
+<% end %>

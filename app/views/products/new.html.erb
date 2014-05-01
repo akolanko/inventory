@@ -1,0 +1,49 @@
+<% if current_user && current_user.admin == true %>
+
+	<h3>Add a Product to <%= link_to @category.name, category_path(params[:category_id]), class: "colorlink" %></h3>
+
+		<% if @product.errors.full_messages.any? %>
+			<ul class="errormessages">
+				<% @product.errors.full_messages.each do |error| %>
+					<li>
+						<%= error %>
+					</li>
+				<% end %>
+			</ul>
+		<% end %>
+
+		<div class="formdiv">
+			<%= form_for [@category, @product], category_products_path, :html => { :multipart => true } do |f| %>
+				<%= f.label :name, "Name" %>
+				<br>
+				<%= f.text_field :name %>
+				<br>
+				<%= f.label :color, "Color" %>
+				<br>
+				<%= f.text_field :color %>
+				<br>
+				<%= f.label :measurements, "Measurements" %>
+				<br>
+				<%= f.text_area :measurements%>
+				<br>
+				<%= f.label :price, "Price" %>
+				<br>
+				<%= f.text_field :price %>
+				<br>
+				<%= f.label :inventory, "Amount in Stock" %>
+				<br>
+				<%= f.text_field :inventory %>
+				<br>
+				<%= f.label :soldout, "Sold Out" %>
+				<br>
+				<%= f.text_field :soldout %>
+				<br>
+				<%= f.label :image, "Upload Image" %>
+				<br>
+				<%= f.file_field :image %>
+				<br>
+				<%= f.submit "Submit", :class => "submit" %>
+			<% end %>
+		</div>
+
+<% end %>
