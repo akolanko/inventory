@@ -1,0 +1,20 @@
+<% if current_user && current_user.admin == true %>
+
+	<h3>Update <%= link_to @product.name, category_product_path(@category.id, @product.id), class: "colorlink" %> Listing</h3>
+
+		<div class="formdiv">
+			<%= form_for [@category, @product, @listing] do |f| %>
+				<%= f.label :website, "Website" %>
+				<br>
+				<%= f.text_field :website %>
+				<br>
+				<%= f.label :posted_date, "Date Posted" %>
+				<br>
+				<%= f.date_field :posted_date %>
+				<br>
+				<%= f.submit "Update", :class => "submit" %>
+			<% end %>
+		</div>
+
+<% end %>
+

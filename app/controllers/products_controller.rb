@@ -1,11 +1,20 @@
 class ProductsController < ApplicationController
+
   def index
-    @category = Category.find(params[:category_id])
-    @products = @category.products.all
+    @products = Product.all
+  end
+
+  def instock
+    @products = Product.all
+  end
+
+  def soldout
+    @products = Product.all
   end
 
   def show
     @product = Product.find(params[:id])
+    @category = Category.find(params[:category_id])
   end
 
   def new
@@ -17,9 +26,9 @@ class ProductsController < ApplicationController
     @category = Category.find(params[:category_id])
     @product = Product.new(product_params)
     @product.category_id = params[:category_id]
-    if @product.save!
+    if @product.save
       flash[:notice] = "#{@product.name} created successfully."
-      redirect_to category_products_path(@product.category.id)
+      redirect_to category_product_path(@product.category.id, @product.id)
     else
       flash[:alert] = "There were some problems saving your product."
       render "new"
@@ -27,7 +36,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(:params[:id])
+    @product = Product.find(params[:id])
     @category = Category.find(params[:category_id])
   end
 
@@ -47,7 +56,7 @@ class ProductsController < ApplicationController
     @product = Product.where(id: params[:id]).first
     if @product && @product.destroy
       flash[:notice] = "Product deleted sucessfully."
-      redirect_to category_products_path(@product.category.id)
+      redirect_to category_path(@product.category.id)
     else
       flash[:alert] = "There was a problem deleting this product."
       redirect_to :back
@@ -56,7 +65,7 @@ class ProductsController < ApplicationController
 
 private
   def product_params
-    params.require(:product).permit(:name, :color, :measurements, :price, :inventory, :soldout, :image)
+    params.require(:product).permit(:name, :color, :material, :measurements, :price, :inventory, :soldout, :image)
   end
 
 end

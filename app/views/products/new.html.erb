@@ -1,6 +1,6 @@
 <% if current_user && current_user.admin == true %>
 
-	<h3>Add a Product to <%= link_to @category.name, category_path(params[:category_id]), class: "colorlink" %></h3>
+	<h3>Add a Product to <%= link_to @category.name, category_path(@category.id), class: "colorlink" %></h3>
 
 		<% if @product.errors.full_messages.any? %>
 			<ul class="errormessages">
@@ -13,7 +13,7 @@
 		<% end %>
 
 		<div class="formdiv">
-			<%= form_for [@category, @product], category_products_path, :html => { :multipart => true } do |f| %>
+			<%= form_for [@category, @product], :url => category_products_path(@category.id), :html => { :multipart => true } do |f| %>
 				<%= f.label :name, "Name" %>
 				<br>
 				<%= f.text_field :name %>
@@ -21,6 +21,10 @@
 				<%= f.label :color, "Color" %>
 				<br>
 				<%= f.text_field :color %>
+				<br>
+				<%= f.label :material, "Material" %>
+				<br>
+				<%= f.text_field :material %>
 				<br>
 				<%= f.label :measurements, "Measurements" %>
 				<br>
@@ -36,7 +40,7 @@
 				<br>
 				<%= f.label :soldout, "Sold Out" %>
 				<br>
-				<%= f.text_field :soldout %>
+				<%= f.check_box :soldout %>
 				<br>
 				<%= f.label :image, "Upload Image" %>
 				<br>

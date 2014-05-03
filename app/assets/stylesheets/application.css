@@ -10,10 +10,11 @@
  *
  *= require_self
  *= require_tree .
+ *= require MyFontsWebfontsKit.css
  */
 
 body{
-	font-family: "Sackers Gothic Std" "Helvetica", "Arial", sans-serif;
+	font-family: "SackersGothicStd-Medium" "Helvetica", "Arial", sans-serif;
 	text-transform: lowercase;
 	color: #000;
 	font-size: 14px;
@@ -36,17 +37,21 @@ body{
 }
 
 #container{
-	width: 900px;
+	width: 980px;
  	margin: 0 auto;
  	padding: 0;
  	background-color: #fff;
 }
 
 #header{
-	width: 900px;
+	width: 980px;
 	padding: 0;
 	margin: 40px 0;
 	text-align: center;
+}
+
+div.biggerfont{
+	font-size: 1.1em;
 }
 
 /* --links-- */
@@ -118,7 +123,7 @@ h4{
  /* --navigation menu-- */
 
 #nav{
-	width: 900px;
+	width: 980px;
  	height: 30px;
 	margin: 0 auto;
 	padding: 0;
@@ -133,7 +138,7 @@ ul#menu{
 
 ul#menu li.menu_item{
  	display: inline;
- 	padding: 16px;
+ 	padding: 20px;
 }
 
 a:link{
@@ -154,7 +159,7 @@ a:hover{
 
 #content{
 	width: 900px;
-	margin: 40px 0;
+	margin: 40px 40px 0 40px;
 	padding: 0;
 }
 
@@ -171,19 +176,19 @@ a:hover{
 	height: 30px;
 	margin: 40px 0;
 	padding: 0;
-	width: 900px;
+	width: 980px;
 }
 
 #left{
-	margin-left: 50px;
+	margin-left: 70px;
 	float: left;
-	width: 400px;
+	width: 420px;
 }
 
 #right{
-	margin-right: 50px;
+	margin-right: 70px;
 	float: right;
-	width: 400px;
+	width: 420px;
 	text-align: right;
 }
 
@@ -191,6 +196,13 @@ a:hover{
 
  div#formdiv{
 	line-height: 160%;
+}
+
+input[type="date"]{
+   font-family: inherit;
+   font-size: inherit;
+   color: #ccc;
+   width: 250px;
 }
 
 input[type="text"]{
@@ -233,11 +245,12 @@ input.submit:hover{
 	border-top: 1px solid #ccc;
 }
 
+/* --error messages */
 
+ul.errormessages{
+	list-style: none;
+}
 
-
-
-
-
-
-
+ul.errormessages li{
+	color: #ccc;
+}

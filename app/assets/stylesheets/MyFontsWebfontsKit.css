@@ -1,0 +1,35 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 2798060, 2014-04-20T20:44:12-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Sackers Gothic Light by Monotype 
+ * URL: http://www.myfonts.com/fonts/mti/sackers-gothic/light/
+ * Copyright: Digitized data (C) 2003 Agfa Monotype Corporation. 
+ * 
+ * Webfont: Sackers Gothic Light Alt by Monotype 
+ * URL: http://www.myfonts.com/fonts/mti/sackers-gothic/light-alt/
+ * Copyright: Digitized data (C) 2003 Agfa Monotype Corporation.
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2798060
+ * Licensed pageviews: 250,000
+ * 
+ * © 2014 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/2ab1ec");
+
+  
+@font-face {font-family: 'SackersGothicLight';src: url('webfonts/2AB1EC_0_0.eot');src: url('webfonts/2AB1EC_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2AB1EC_0_0.woff') format('woff'),url('webfonts/2AB1EC_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'SackersGothicLightAlt';src: url('webfonts/2AB1EC_1_0.eot');src: url('webfonts/2AB1EC_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2AB1EC_1_0.woff') format('woff'),url('webfonts/2AB1EC_1_0.ttf') format('truetype');}
+ 
