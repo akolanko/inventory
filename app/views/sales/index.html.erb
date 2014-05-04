@@ -1,7 +1,7 @@
 <% if current_user && current_user.admin == true %>
 	<span class="color"><h2>All Sales for <%= link_to @product.name, category_product_path(@category.id, @product.id), class: "colorlink" %></h2></span>
 	<% if @sales.first %>
-		<% @sales.each do |sale| %>
+		<% @sales.reverse.each do |sale| %>
 			<h3>Sale id: <%= sale.id %></h3>
 			<div class="biggerfont">
 				<span class="color">Price Sold:</span> $<%= sale.price/100 %>

@@ -1,7 +1,7 @@
 <% if current_user && current_user.admin == true %>
 	
 	<span class="color"><h2> Products In Stock</h2></span>
-	<% @products.each do |product| %>
+	<% @products.reverse.each do |product| %>
 		<% if product.soldout == false %>
 			<%= link_to product.name, category_product_path(product.category.id, product.id) %>
 			<br>

@@ -1,7 +1,7 @@
 <% if current_user && current_user.admin == true %>
 	
 	<span class="color"><h2> Sold Out Products </h2></span>
-	<% @products.each do |product| %>
+	<% @products.reverse.each do |product| %>
 		<% if product.soldout == true %>
 			<%= link_to product.name, category_product_path(product.category.id, product.id) %>
 			<br>
