@@ -15,7 +15,10 @@
 			<br>
 			<%= @product.measurements %>
 			<br><br>
-			<span class="color">Price:</span> $<%= @product.price/100 %>
+			<span class="color">Price:</span>
+				<% if @product.price %>
+					$<%= @product.price/100 %>
+				<% end %>
 			<br><br>
 			<span class="color">Availability:</span>
 					<% if @product.inventory <=0 %>
