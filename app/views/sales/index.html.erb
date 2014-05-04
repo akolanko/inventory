@@ -15,10 +15,13 @@
 				<span class="color">Date Sold:</span> <%= sale.date %>
 				<br><br>
 			</div>
+			<span class="linkpadding"><%= link_to "[Edit Sale]", edit_category_product_sale_path(@category.id, @product.id, sale.id), class: "colorlink" %></span>
+			<span class="linkpadding"><%= link_to "[Delete Sale]", category_product_sale_path(@category.id, @product.id, sale.id), method: :delete, confirm: "Are you sure you want to delete this sale?", class: "colorlink" %></span>
 		<% end %>
 	<% else %>
 		This product has not been sold yet.
 	<% end %>
+	<br><br>
 	<span class="color"><h3> Add a Sale </h3></span>
 	<div class="formdiv">
 			<%= form_for [@category, @product, @sale] do |f| %>
