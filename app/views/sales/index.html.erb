@@ -4,11 +4,20 @@
 		<% @sales.reverse.each do |sale| %>
 			<h3>Sale id: <%= sale.id %></h3>
 			<div class="biggerfont">
-				<span class="color">Price Sold:</span> $<%= sale.price/100 %>
+				<span class="color">Price Sold:</span>
+				<% if sale.price %>
+					$<%= sale.price/100 %>
+				<% end %>
 				<br><br>
-				<span class="color">Shipping Cost:</span> $<%= sale.shipping_cost/100 %>
+				<span class="color">Shipping Cost:</span>
+				<% if sale.shipping_cost %>
+					$<%= sale.shipping_cost/100 %>
+				<% end %>
 				<br><br>
-				<span class="color">Shipping Paid:</span> $<%= sale.shipping_paid/100 %>
+				<span class="color">Shipping Paid:</span>
+				<% if sale.shipping_paid %>
+					$<%= sale.shipping_paid/100 %>
+				<% end %>
 				<br><br>
 				<span class="color">Sold Through:</span><%= sale.through %>
 				<br><br>
