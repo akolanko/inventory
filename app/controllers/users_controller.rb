@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(user_params)
-  	@user.update_attributes(admin: false)
+  	@user.update_attributes(admin: true)
   	if @user.save
   		flash[:notice] = "Account created sucessfully."
   		redirect_to user_path(@user.id)

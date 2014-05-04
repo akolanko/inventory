@@ -1,4 +1,4 @@
-<% if current_user && current_user.admin == true %>
+
 	<h2>New User</h2>
 
 	<% if @user.errors.full_messages.any? %>
@@ -39,4 +39,4 @@
 
 	<br><br>
 	<%= link_to "[All Users]", users_path, class: "colorlink" %>
-<% end %>
+
