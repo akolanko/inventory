@@ -3,7 +3,7 @@ class Product < ActiveRecord::Base
 	validates :color, presence: true
 	validates :material, presence: true
 	validates :measurements, presence: true
-	validates :price, presence: true, numericality: {only_integer: true}
+	validates :price, numericality: {only_integer: true}, allow_nil: true
 	validates :inventory, presence: true, numericality: {only_integer: true}
 
 	has_attached_file :image, :styles => {:medium => "400x400"}, :default_url => "/images/:style/missing.jpg"
