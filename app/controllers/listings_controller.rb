@@ -1,4 +1,13 @@
 class ListingsController < ApplicationController
+  
+  def index
+    @listings = Listing.all
+  end
+
+  def search
+    @listings = Listing.where(website: params[:query])
+  end
+
   def new
   	@listing = Listing.new
     @product = Product.find(params[:product_id])

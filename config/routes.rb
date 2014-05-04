@@ -15,5 +15,10 @@ Inventory::Application.routes.draw do
   delete "/signout" => "sessions#destroy", as: :signout
   get "/instock" => "products#instock", as: :instock
   get "/soldout" => "products#soldout", as: :soldout
+  get "/locations" => "locations#index", as: :locations
+  get "/locations/search" => "locations#search", as: :search_locations
+  get "/listings" => "listings#index", as: :listings
+  get "/listings/search" => "listings#search", as: :search_listings
+  get "/sales" => "sales#all", as: :sales
 
 end

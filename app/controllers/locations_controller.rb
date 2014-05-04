@@ -1,5 +1,13 @@
 class LocationsController < ApplicationController
 
+  def index
+    @locations = Location.all
+  end
+
+  def search
+    @locations = Location.where(location: params[:query])
+  end
+
   def new
     @location = Location.new
     @product = Product.find(params[:product_id])

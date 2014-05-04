@@ -15,7 +15,7 @@
 			<br>
 			<%= @product.measurements %>
 			<br><br>
-			<span class="color">Price:</span> $<%= @product.price/100 %>.00
+			<span class="color">Price:</span> $<%= @product.price/100 %>
 			<br><br>
 			<span class="color">Availability:</span>
 					<% if @product.inventory <=0 %>
@@ -80,11 +80,11 @@
 
 		<br><br>
 		<h3>Sales</h3>
-		<span class="color">Number Sold:</span> <%= @product.sales.all.count %>
-		<% if @product.sales.first %>
-
-		<% end %>
-
+		<div class="biggerfont">
+			<span class="color">Number Sold:</span> <%= @product.sales.all.count %>
+		</div>
+		<br><br>
+		<span class="linkpadding"><%= link_to "[View All Sales for Product]", category_product_sales_path(@category.id, @product.id), class: "colorlink" %></span>
 	</div>
 
 <% end %>

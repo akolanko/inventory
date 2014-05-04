@@ -1,0 +1,13 @@
+<% if current_user && current_user.admin == true %>
+	<span class="color"><h2>All Sold Products</h2></span>
+	<% @products.each do |product| %>
+		<% if product.sales.first %>
+			<%= link_to product.name, category_product_path(product.category.id, product.id) %>
+			<br>
+			Number Sold: <span class="color"><%= product.sales.all.count %></span>
+			<br>
+			<%= image_tag product.image.url(:medium) %>
+			<br><br>
+		<% end %>
+	<% end %>
+<% end %>
