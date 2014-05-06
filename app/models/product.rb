@@ -12,6 +12,9 @@ class Product < ActiveRecord::Base
 	validates :price, numericality: {only_integer: true}, allow_nil: true
 	validates :inventory, presence: true, numericality: {only_integer: true}
 
-	has_attached_file :image, :styles => {:medium => "400x400"}, :default_url => "/images/missing.jpg"
+	has_attached_file :image, :styles => {:medium => "400x400"}, :default_url => "/images/:style/missing.jpg", :storage => :s3, :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
+	def s3_credentials
+		{:bucket => '[AWS_BUCKET]', :access_key_id => ENV['AWS_KEY'], :secret_access_key => ENV['AWS_SECRET']}
+	end
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg"]
 end
