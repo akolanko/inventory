@@ -44,6 +44,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'paperclip', github: 'thoughtbot/paperclip'
 
+gem 'aws-sdk'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
