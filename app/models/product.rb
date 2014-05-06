@@ -17,7 +17,7 @@ class Product < ActiveRecord::Base
 
 	has_attached_file :download, :storage => :s3, :s_3credentials => Proc.new{|a| a.instance.s3_credentials }
 	def credentails
-		{:bucket => 'aleksandrakolankoinventory', :access_key_id => ENV['AWS_KEY'], :secret_access_key => ENV['AWS_SECRET']}
+		{:bucket => '[AWS_BUCKET]', :access_key_id => ENV['AWS_KEY'], :secret_access_key => ENV['AWS_SECRET']}
 	end
 
 end
