@@ -12,6 +12,6 @@ class Product < ActiveRecord::Base
 	validates :price, numericality: {only_integer: true}, allow_nil: true
 	validates :inventory, presence: true, numericality: {only_integer: true}
 
-	has_attached_file :image, :styles => {:medium => "400x400"}, :default_url => "/images/:style/missing.jpg"
+	has_attached_file :image, :styles => {:medium => "400x400"}, :default_url => "/images/missing.jpg"
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg"]
 end
