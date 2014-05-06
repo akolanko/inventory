@@ -5,7 +5,7 @@
 		<% if product.soldout == false %>
 			<%= link_to product.name, category_product_path(product.category.id, product.id) %>
 			<br>
-			<%= image_tag product.image.url(:medium) %>
+			<%= image_tag product.image.url(:bucket) %>
 			<br><br>
 		<% end %>
 	<% end %>
