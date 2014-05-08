@@ -34,7 +34,7 @@
 				<br>
 				<%= f.text_field :contact_phone %>
 				<br>
-				<%= f.submit "Submit", :class => "submit" %>
+				<%= f.submit "Submit", :class => "submit", data: {disable_with: "Submitting..."} %>
 			<% end %>
 		</div>
 

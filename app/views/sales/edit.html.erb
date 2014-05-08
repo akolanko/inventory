@@ -24,7 +24,7 @@
 				<br>
 				<%= f.date_field :date %>
 				<br>
-				<%= f.submit "Update", :class => "submit" %>
+				<%= f.submit "Update", :class => "submit", data: {disable_with: "Submitting..."} %>
 			<% end %>
 		</div>
 

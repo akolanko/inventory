@@ -33,7 +33,7 @@
 			<br>
 			<%= f.password_field :password_confirmation %>
 			<br>
-			<%= f.submit "Submit", :class => "submit" %>
+			<%= f.submit "Submit", :class => "submit", data: {disable_with: "Submitting..."} %>
 		<% end %>
 	</div>
 

@@ -36,7 +36,7 @@
 				<br>
 				<%= f.file_field :image %>
 				<br>
-				<%= f.submit "Update", :class => "submit" %>
+				<%= f.submit "Update", :class => "submit", data: {disable_with: "Submitting..."} %>
 			<% end %>
 		</div>
 

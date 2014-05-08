@@ -6,7 +6,7 @@
 			<br>
 			<%= text_field_tag :query %>
 			<br>
-			<%= submit_tag "Search", :class => "submit" %>
+			<%= submit_tag "Search", :class => "submit", data: {disable_with: "Submitting..."} %>
 		<% end %>
 	</div>
 	<br>

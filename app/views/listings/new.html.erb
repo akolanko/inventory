@@ -22,7 +22,7 @@
 				<br>
 				<%= f.date_field :posted_date %>
 				<br>
-				<%= f.submit "Submit", :class => "submit" %>
+				<%= f.submit "Submit", :class => "submit", data: {disable_with: "Submitting..."} %>
 			<% end %>
 		</div>
 
