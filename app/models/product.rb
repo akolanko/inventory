@@ -1,9 +1,9 @@
 class Product < ActiveRecord::Base
 
 	belongs_to :category
-	has_many :sales
-	has_one :location
-	has_many :listings
+	has_many :sales, dependent: :destroy
+	has_one :location, dependent: :destroy
+	has_many :listings, dependent: :destroy
 
 	validates :name, presence: true, uniqueness: true
 	validates :color, presence: true
