@@ -46,6 +46,8 @@ gem 'paperclip', github: 'thoughtbot/paperclip'
 
 gem 'aws-sdk'
 
+gem 'kaminari'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

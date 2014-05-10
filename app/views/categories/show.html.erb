@@ -8,6 +8,7 @@
 				<%= image_tag product.image.url(:medium) %>
 				<br><br>
 			<% end %>
+			<%= paginate @products %>
 		<% else %>
 			There are currently no products of this type.
 		<% end %>
