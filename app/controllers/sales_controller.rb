@@ -7,7 +7,7 @@ class SalesController < ApplicationController
   end
 
   def all
-    @products = Product.page(params[:page]).per(10)
+    @sales = Sale.page(params[:page]).per(10)
   end
 
   def new

@@ -1,14 +1,14 @@
 <% if current_user && current_user.admin == true %>
 	<span class="color"><h2>All Sold Products</h2></span>
-	<% @products.reverse.each do |product| %>
-		<% if product.sales.first %>
-			<%= link_to product.name, category_product_path(product.category.id, product.id) %>
+	<% @sales.reverse.each do |sale| %>
+
+			<%= link_to sale.product.name, category_product_path(sale.product.category.id, sale.product.id) %>
 			<br>
-			Number Sold: <span class="color"><%= product.sales.all.count %></span>
+			Number Sold: <span class="color"><%= sale.product.sales.all.count %></span>
 			<br>
-			<%= image_tag product.image.url(:medium) %>
+			<%= image_tag sale.product.image.url(:medium) %>
 			<br><br>
 		<% end %>
-	<% end %>
-	<%= paginate @products %>
+
+	<%= paginate @sales %>
 <% end %>
