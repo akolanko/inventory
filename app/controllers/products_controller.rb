@@ -5,11 +5,11 @@ class ProductsController < ApplicationController
   end
 
   def instock
-    @products = Product.page(params[:page]).per(10)
+    @products = Product.where(soldout: false).page(params[:page]).per(10)
   end
 
   def soldout
-    @products = Product.page(params[:page]).per(10)
+    @products = Product.where(soldout: true).page(params[:page]).per(10)
   end
 
   def show

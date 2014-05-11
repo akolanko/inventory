@@ -2,13 +2,11 @@
 	
 	<span class="color"><h2> Products In Stock</h2></span>
 	<% @products.reverse.each do |product| %>
-		<% if product.soldout == false %>
 			<%= link_to product.name, category_product_path(product.category.id, product.id) %>
 			<br>
 			<%= image_tag product.image.url(:medium) %>
 			<br><br>
 		<% end %>
-	<% end %>
 	<%= paginate @products %>
 
 <% end %>
