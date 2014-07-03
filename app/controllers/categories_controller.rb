@@ -9,6 +9,16 @@ class CategoriesController < ApplicationController
   	@products = @category.products.page(params[:page]).per(10)
   end
 
+  def instock
+    @category = Category.find(params[:category_id])
+    @products = Product.where(category_id: params[:category_id], soldout: false).page(params[:page]).per(10)
+  end
+
+  def soldout
+    @category = Category.find(params[:category_id])
+    @products = Product.where(category_id: params[:category_id], soldout: true).page(params[:page]).per(10)
+  end
+
   def new
   	@category = Category.new
   end

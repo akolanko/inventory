@@ -20,5 +20,6 @@
 			<%= image_tag listing.product.image.url(:medium) %>
 			<br><br>
 		<% end %>
+		<%= paginate @listings %>
 	<% end %>
 <% end %>

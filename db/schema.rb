@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504161326) do
+ActiveRecord::Schema.define(version: 20140703191855) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20140504161326) do
     t.string   "name"
     t.string   "color"
     t.text     "measurements"
-    t.integer  "price"
+    t.float    "price"
     t.integer  "inventory"
     t.boolean  "soldout"
     t.integer  "category_id"
@@ -56,14 +56,21 @@ ActiveRecord::Schema.define(version: 20140504161326) do
   end
 
   create_table "sales", force: true do |t|
-    t.integer  "price"
+    t.float    "price"
     t.string   "through"
     t.datetime "date"
     t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "shipping_cost"
-    t.integer  "shipping_paid"
+    t.float    "shipping_cost"
+    t.float    "shipping_paid"
+  end
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

@@ -17,7 +17,7 @@
 			<br><br>
 			<span class="color">Price:</span>
 				<% if @product.price %>
-					$<%= @product.price/100 %>
+					$<%= @product.price %>
 				<% end %>
 			<br><br>
 			<span class="color">Availability:</span>
@@ -28,6 +28,15 @@
 						<br>
 						<span class="color">Amount in stock:</span> <%= @product.inventory %>
 					<% end%>
+			<br><br>
+			<span class="color">Tags:</span>
+				<% if @product.tags.first %>
+					<% @product.tags.all.each do |tag| %>
+						"<%= tag.name %>" 
+					<% end %>
+				<% end %>
+				<br>
+				<span class="paddingspan"><%=link_to "[Add Tag]", category_product_tags_path(@category.id, @product.id), class: "colorlink" %></span>
 		</div>
 		<br><br>
 		<span class="linkpadding"><%= link_to "[Edit Product]", edit_category_product_path(@category.id, @product.id), class: "colorlink" %></span>

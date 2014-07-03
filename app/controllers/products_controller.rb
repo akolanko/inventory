@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
-  def index
-    @products = Product.all
+  def all
+    @products = Product.page(params[:page]).per(10)
   end
 
   def instock

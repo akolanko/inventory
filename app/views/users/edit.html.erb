@@ -1,4 +1,5 @@
-<% if current_user && current_user.admin == true %>
+<% if current_user && if current_user.admin == true %>
+<div class="colone">
 	<h2>Edit <%= @user.username %>'s Information</h2>
 
 	<div class="formdiv">
@@ -18,4 +19,7 @@
 			<%= f.submit "Update", :class => "submit", data: {disable_with: "Submitting..."} %>
 		<% end %>
 	</div>
+</div>
+<div class="clear">
+</div>
 <% end %>

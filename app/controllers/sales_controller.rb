@@ -3,11 +3,15 @@ class SalesController < ApplicationController
     @product = Product.find(params[:product_id])
     @category = Category.find(params[:category_id])
     @sale = Sale.new
-    @sales = @product.sales.all
+    @sales = @product.sales.page(params[:page]).per(10)
   end
 
   def all
     @sales = Sale.page(params[:page]).per(10)
+  end
+
+  def search
+    @sales = Sale.where(through: params[:query]).page(params[:page]).per(10)
   end
 
   def new

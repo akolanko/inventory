@@ -6,17 +6,17 @@
 			<div class="biggerfont">
 				<span class="color">Price Sold:</span>
 				<% if sale.price %>
-					$<%= sale.price/100 %>
+					$<%= sale.price %>
 				<% end %>
 				<br><br>
 				<span class="color">Shipping Cost:</span>
 				<% if sale.shipping_cost %>
-					$<%= sale.shipping_cost/100 %>
+					$<%= sale.shipping_cost %>
 				<% end %>
 				<br><br>
 				<span class="color">Shipping Paid:</span>
 				<% if sale.shipping_paid %>
-					$<%= sale.shipping_paid/100 %>
+					$<%= sale.shipping_paid %>
 				<% end %>
 				<br><br>
 				<span class="color">Sold Through:</span><%= sale.through %>
@@ -27,6 +27,7 @@
 			<span class="linkpadding"><%= link_to "[Edit Sale]", edit_category_product_sale_path(@category.id, @product.id, sale.id), class: "colorlink" %></span>
 			<span class="linkpadding"><%= link_to "[Delete Sale]", category_product_sale_path(@category.id, @product.id, sale.id), method: :delete, confirm: "Are you sure you want to delete this sale?", class: "colorlink" %></span>
 		<% end %>
+		<% paginate @sales %>
 	<% else %>
 		This product has not been sold yet.
 	<% end %>

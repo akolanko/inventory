@@ -1,11 +1,11 @@
 class ListingsController < ApplicationController
   
-  def index
-    @listings = Listing.all
+  def all
+    @listings = Listing.page(params[:page]).per(10)
   end
 
   def search
-    @listings = Listing.where(website: params[:query])
+    @listings = Listing.where(website: params[:query]).page(params[:page]).per(10)
   end
 
   def new

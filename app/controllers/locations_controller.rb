@@ -1,11 +1,11 @@
 class LocationsController < ApplicationController
 
-  def index
-    @locations = Location.all
+  def all
+    @locations = Location.page(params[:page]).per(10)
   end
 
   def search
-    @locations = Location.where(location: params[:query])
+    @locations = Location.where(location: params[:query]).page(params[:page]).per(10)
   end
 
   def new

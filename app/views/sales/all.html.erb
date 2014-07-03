@@ -1,6 +1,9 @@
 <% if current_user && current_user.admin == true %>
 	<span class="color"><h2>All Sold Products</h2></span>
-	<% @sales.reverse.each do |sale| %>
+	<%= link_to "[Search for Product Sale]", sales_search_path, class: "colorlink" %>
+	<br><br>
+	<% if @sales.first %>
+		<% @sales.reverse.each do |sale| %>
 
 			<%= link_to sale.product.name, category_product_path(sale.product.category.id, sale.product.id) %>
 			<br>
@@ -9,6 +12,8 @@
 			<%= image_tag sale.product.image.url(:medium) %>
 			<br><br>
 		<% end %>
-
-	<%= paginate @sales %>
+		<%= paginate @sales %>
+	<% else %>
+		No products have been sold yet.
+	<% end %>
 <% end %>

@@ -16,17 +16,64 @@
 								<li class="menu_item">
 									<%= link_to "Categories", categories_path %>
 								</li>
-								<li class="menu_item">
-									<%= link_to "Products", products_path %>
+								<li class="menu_item"><a href="#">Products</a>
+									<ul>
+										<li>
+											<%= link_to "All Products", products_path %>
+										</li>
+										<li>
+											<%= link_to "In Stock", instock_path %>
+										</li>
+										<li>
+											<%= link_to "Sold Out", soldout_path %>
+										</li>
+										<li>
+											<%= link_to "Search", tags_search_path %>
+										</li>
+									</ul>
 								</li>
-								<li class="menu_item">
-									<%= link_to "Sales", sales_path %>
+								<li class="menu_item"><a href="#">Sales</a>
+									<ul>
+										<li>
+											<%= link_to "All Sales", sales_path %>
+										</li>
+										<li>
+											<%= link_to "Search", sales_search_path %>
+										</li>
+									</ul>
 								</li>
-								<li class="menu_item">
-									<%= link_to "New User", new_user_path %>
+								<li class="menu_item"><a href="#">Listings</a>
+									<ul>
+										<li>
+											<%= link_to "All Listings", listings_path %>
+										</li>
+										<li>
+											<%= link_to "Search", listings_search_path %>
+										</li>
+									</ul>
 								</li>
-								<li class="menu_item">
-									<%= link_to "My Account", user_path(current_user.id) %>
+								<li class="menu_item"><a href="#">Locations</a>
+									<ul>
+										<li>
+											<%= link_to "All Locations", locations_path %>
+										</li>
+										<li>
+											<%= link_to "Search", locations_search_path %>
+										</li>
+									</ul>
+								</li>
+								<li class="menu_item"><a href="#">Users</a>
+									<ul>
+										<li>
+											<%= link_to "My Account", user_path(current_user.id) %>
+										</li>
+										<li>
+											<%= link_to "New User", new_user_path %>
+										</li>
+										<li>
+											<%= link_to "All Users", users_path %>
+										</li>
+									</ul>
 								</li>
 								<li class="menu_item">
 									<%= link_to "Sign Out", signout_path, method: :delete %>
