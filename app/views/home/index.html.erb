@@ -1,3 +1,7 @@
-<%= link_to signin_path do%>
+<% if current_user && current_user.admin == true %>
 	<%=image_tag "Home01.jpg", class: "homeimg" %>
+<% else %>
+	<%= link_to signin_path do%>
+		<%=image_tag "Home01.jpg", class: "homeimg" %>
+	<% end %>
 <% end %>

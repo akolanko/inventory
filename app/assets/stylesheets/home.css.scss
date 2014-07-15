@@ -2,3 +2,12 @@ img.homeimg{
 	width: 500px;
 	margin: 20px 200px;
 }
+
+img.homeimg:hover{
+	opacity: .8;
+	cursor: pointer;
+	transition-duration: .7s;
+    -moz-transition-duration: .7s;
+    -webkit-transition-duration: .7s;
+    -o-transition-duration: .7s;
+}
