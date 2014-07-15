@@ -7,7 +7,7 @@ def index
   end
 
   def search
-    @tags = Tag.where(name: params[:query]).page(params[:page]).per(10)
+    @tags = Tag.where(name: params[:query].to_s.downcase).page(params[:page]).per(10)
   end
 
   def new
@@ -20,6 +20,7 @@ def index
     @category = Category.find(params[:category_id])
     @product = Product.find(params[:product_id])
     @tag = Tag.new(tag_params)
+    @tag.update_attributes(name: @tag.name.downcase)
     @tag.product_id = @product.id
     if @tag.save
       flash[:notice] = "Tag added sucessfully."

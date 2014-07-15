@@ -11,7 +11,7 @@ class SalesController < ApplicationController
   end
 
   def search
-    @sales = Sale.where(through: params[:query]).page(params[:page]).per(10)
+    @sales = Sale.where(through: params[:query].to_s.downcase).page(params[:page]).per(10)
   end
 
   def new
@@ -24,6 +24,7 @@ class SalesController < ApplicationController
     @category = Category.find(params[:category_id])
     @product = Product.find(params[:product_id])
     @sale = Sale.new(sale_params)
+    @sale.update_attributes(through: @sale.through.downcase)
     @sale.product_id = @product.id
     if @sale.save
       flash[:notice] = "Sale created sucessfully."
@@ -44,7 +45,9 @@ class SalesController < ApplicationController
     @category = Category.find(params[:category_id])
     @product = Product.find(params[:product_id])
     @sale = Sale.where(id: params[:id]).first
-    if @sale.update_attributes(sale_params)
+    @sale.update_attributes(sale_params)
+    @sale.update_attributes(through: @sale.through.downcase)
+    if @sale.save
       flash[:notice] = "Sale updated sucessfully."
       redirect_to category_product_sales_path(@category.id, @product.id)
     else

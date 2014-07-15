@@ -5,7 +5,7 @@ class ListingsController < ApplicationController
   end
 
   def search
-    @listings = Listing.where(website: params[:query]).page(params[:page]).per(10)
+    @listings = Listing.where(website: params[:query].to_s.downcase).page(params[:page]).per(10)
   end
 
   def new
@@ -18,6 +18,7 @@ class ListingsController < ApplicationController
   	@category = Category.find(params[:category_id])
     @product = Product.find(params[:product_id])
     @listing = Listing.new(listing_params)
+    @listing.update_attributes(website: @listing.website.downcase)
     @listing.product_id = @product.id
     if @listing.save
       flash[:notice] = "Listing created sucessfully."
@@ -38,7 +39,9 @@ class ListingsController < ApplicationController
   	@category = Category.find(params[:category_id])
     @product = Product.find(params[:product_id])
     @listing = Listing.where(id: params[:id]).first
-    if @listing.update_attributes(listing_params)
+    @listing.update_attributes(listing_params)
+    @listing.update_attributes(website: @listing.website.downcase)
+    if @listing.save
       flash[:notice] = "Listing updated sucessfully."
       redirect_to category_product_path(@category.id, @product.id)
     else
