@@ -10,11 +10,11 @@
  *
  *= require_self
  *= require_tree .
- *= require MyFontsWebfontsKit.css.erb
+ *= require MyFontsWebfontsKit.css
  */
 
 body{
-	font-family: "SackersGothicStd-Medium" "Helvetica", "Arial", sans-serif;
+	font-family: "SackersGothicStd-Medium", "Helvetica", "Arial", sans-serif;
 	text-transform: lowercase;
 	color: #000;
 	font-size: 14px;
